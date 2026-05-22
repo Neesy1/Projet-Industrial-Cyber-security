@@ -51,7 +51,7 @@ def injection_s7(target_ip, port=102):
             print("Choix invalide.")
 
 if __name__ == "__main__":
-    # Si lancé seul : python3 indus_inj.py 192.168.0.10
+    
     if len(sys.argv) > 1:
         ip_cible = sys.argv[1]
         injection_s7(ip_cible)
