@@ -1,8 +1,12 @@
 **Industrial Cyber Security Project - Siemens S7-1200 Analysis**
 Ce projet est un outil de test d'intrusion et d'audit de sécurité dédié aux environnements industriels, spécifiquement ciblé sur les automates Siemens S7-1200. Il regroupe des outils de reconnaissance, d'attaque par force brute sur interface web et de manipulation de processus via Replay Attack (S7Comm).
 
+
+
 [!WARNING]
 Avertissement Légal : Cet outil est destiné à un usage éducatif et professionnel dans le cadre de tests d'intrusion autorisés uniquement. L'utilisation de ces scripts sur des infrastructures critiques sans autorisation est illégale et dangereuse.
+
+
 
 🛠️ Fonctionnalités
 Le projet est structuré autour d'un script principal (script.py) qui sert d'interface pour les modules suivants :
@@ -14,6 +18,7 @@ Détection intelligente : Identifie les ports spécifiques (80/443 pour le porta
 
 Fingerprinting : Tente de récupérer les versions des services pour identifier le matériel.
 
+
 2. Brute Force Web (BF.py)
 Cible l'interface d'administration web des automates Siemens.
 
@@ -22,6 +27,7 @@ Simulation de headers macOS pour éviter certains filtrages basiques.
 Gestion des redirections HTTP (Code 302) pour valider le succès de l'authentification.
 
 Temporisation (time.sleep) pour éviter le déni de service (DoS) sur le CPU de l'automate.
+
 
 3. Replay Attack S7Comm (Replay.py)
 Injecte des trames binaires directement dans le protocole S7.
@@ -33,6 +39,8 @@ Write Request : Envoie des commandes spécifiques pour forcer l'état d'une sort
 Note : Les trames hexadécimales sont pré-configurées pour un environnement spécifique.
 
 
+
+
 📂 Structure du Dépôt
 
 script.py : Le lanceur central (Dashboard).
@@ -42,10 +50,13 @@ Replay.py : Script d'injection de trames S7Comm.
 .gitignore : Liste des fichiers à exclure (ex: mes_passwords.txt, __pycache__).
 
 
+
+
 **🚀 Installation & Utilisation**
 
 Prérequis
 Python 3.x
+
 
 Nmap installé sur le système
 
@@ -60,10 +71,15 @@ Bash
 git clone https://github.com/Neesy1/Projet-Industrial-Cyber-security.git
 Modifiez la variable DOSSIER_PROJET dans script.py pour correspondre à votre chemin local.
 
-Lancez l'outil :
+
+
+**Lancez l'outil :**
 
 Bash
 python3 script.py
+
+
+
 
 **🛡️ Mesures de Remédiation (Bonnes Pratiques)**
 Pour se protéger contre ces types d'attaques sur un S7-1200 :
